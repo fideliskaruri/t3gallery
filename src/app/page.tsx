@@ -1,5 +1,8 @@
+import { headers } from "next/headers";
 import Link from "next/link";
 import { db } from "~/server/db";
+
+export const dynamic = "force-dynamic";
 
 const images = [
   "https://utfs.io/f/0793a546-d4a2-49bb-b0f5-0198a6a96888-fjf2u2.jpg",
@@ -8,7 +11,7 @@ const images = [
   "https://utfs.io/f/78f47bc5-0e0d-41ea-bc6e-709b4c1c619c-xas2sr.jpg"
 ]
 export default async function HomePage() {
-
+  headers();
   const posts = await db.query.posts.findMany();
 
   console.log(posts);
@@ -17,7 +20,7 @@ export default async function HomePage() {
     <main>
       <div className="flex flex-wrap gap-4">
         {posts.map((post) => <div key={post.id}>{post.name}</div>)}
-        {images.map((image, index) => <img src={image} key={index} className="w-48"/>)}
+        {images.map((image, index) => <img src={image} key={index} className="w-48" />)}
       </div>
     </main>
   );
