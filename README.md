@@ -7,6 +7,7 @@
 - [*] Tiddy up build process
 - [*] Actually set up a database (vercel postgres)
 - [*] Add Auth (w/ clerk)
+- [ ] "taint" images (w/ server actions)
 - [ ] Attach db to UI 
 - [ ] Add Auth (w/ clerk)
 - [ ] Add image upload
